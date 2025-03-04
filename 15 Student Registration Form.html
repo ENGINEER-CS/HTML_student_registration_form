@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <style>
+      span {
+          color: red;
+      }
+  </style>
+</head>
+<body>
+      <h3>Student Registration Form</h3>
+
+      <!-- FORM TAG -->
+      <form action="#" method="post">
+      <!-- form tag : used to create a HTML form user input -->
+
+         <table>
+
+            <!-- LABEL AND INPUT TAG -->
+            <tr>
+                <td><label for="fn">Enter Your First Name<span>*</span></label></td>
+                <!-- label tag : defines a label for several element
+                     tells a browser it is an label for any thing -->
+                <td><input type="text" name="fn" required></td>
+                <!-- input tag : used to create a box on webpage where user can enter something -->
+            </tr>
+
+            <tr>
+                <td><label for="ln" >Enter Your Last Name<span>*</span></label></td>
+                <td><input type="text" name="ln" required></td>
+                <!-- required : it specifies that an input field must be filled out before submitting trhe form otherwise it not submited the form -->
+            </tr>
+
+            <tr>
+               <td><label for="dob">Date Of Birth</label></td>
+               <td><input type="date" name="dob" min="2000-01-01" max="2026-01-01"></td>
+               <!-- type="date" defines a date picker and the result should be in year,month,date -->
+               <!-- type="time" which is used to define a time  -->
+            </tr>
+
+            <tr>
+               <td><label for="phone">Phone No</label></td>
+               <td><input type="tel" name="phone"></td>
+               <!-- type="tel" taken a phone number from a user -->
+               <!-- type="color" used to select a color -->
+            </tr>
+
+            <!-- TEXTAREA -->
+            <tr>
+                <td><label for="addr">Enter Your Address</label></td>
+                <td><textarea name="addr"></textarea></td>
+                <!-- textarea : a text area which can hold a unlimited number of character (eg. address, comments, reviews)  -->
+             </tr>
+
+             <!-- INPUT TYPE -->
+             <tr>
+                <!-- email & placeholder attribute -->
+                <td><label for="em">Enter Your Email<span>*</span></label></td>
+                <td><input type="email" placeholder="Email" name="em" required pattern="^.+gmail\.com$"></td>
+                <!-- placeholder : specific short hint that describe the expected value of input field -->
+                <!-- type="email" : validates automatically when submitted -->
+             </tr>
+
+             <tr>
+                <!-- password -->
+                <td><label for="pw">Enter Password<span>*</span></label></td>
+                <td><input type="password" placeholder="Password" name="pw" required minlength="8" maxlength="20"></td>
+                  <!-- pattern="^[A-Za-z](?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}$" -->
+                <!-- type="password" : it hide the enter password by user (it generally mark them as *) -->
+
+                <!-- minlength : it specifies the user it can should minimum value for a input element
+                     maxlength : it pervent the user to add a data more than the maximum value  -->
+             </tr>
+        
+             <tr>
+               <td><label for="pan">Pan Number<span>*</span></label></td>
+               <td><input type="text" name="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"></td>
+               <!-- pattern : regular expression (the input of user must follow the given pattern otherwise is could not be submiiited the form) -->
+            </tr> 
+
+             <!-- CHECKBOX -->    
+             <tr>
+                <td>Select Course</td>
+                <td>
+                    <input type="checkbox" name="html">
+                    <label for="html">HTML</label>
+                    <input type="checkbox" name="css">
+                    <label for="css">CSS</label>
+                    <input type="checkbox" name="js">
+                    <label for="js">JavaScript</label>
+                    <br>
+                    <input type="checkbox" name="java">
+                    <label for="java">Java</label>
+                    <input type="checkbox" name="python">
+                    <label for="python">Python</label>
+                    <input type="checkbox" name="html">
+                    <label for="html">HTML</label>
+                    <!-- type ="checkbox" : It is used to create a square box that can be checked or unchecked.
+                         checkboxes are used to let users select one or more option from set a choice -->
+                </td>
+             </tr>
+
+             <tr>
+                <!-- number -->
+                <td><label for="fees">Course Fees</label></td>
+                <td><input type="number" name="fees" min="10000" max="1000000" step="1000" disabled></td>
+                <!-- type="number" : define a feild for entering a number -->
+             </tr>  
+
+             <!-- RADIO BUTTON -->
+             <tr>
+                <td><label for="gender">Select Gender</label></td>
+                <td> 
+                    <input type="radio" name="gender" value="M">
+                    Male
+                    <input type="radio" name="gender" value="F">
+                    Female
+                    <input type="radio" name="gender" Value="O" checked>
+                    Other  
+                    <!-- type="radio" : a user can select only one of a limited number of choices -->
+                    <!-- value attribute : specifies the value to be sent to a server when form is submiitted -->
+                    <!-- checked(pre-selected) -- before the page-loads used in type="checkbox" and type="radio" -->
+                </td>
+             </tr>
+
+             <tr>
+                <td><label for="height">Select Height (in m)</label></td>
+                <td><input type="number" name="height" min="2" max="8" step="0.1"></td>
+                <!-- min : the input value must be above the min value
+                     max : the input value must be below the max value
+                     step : the input can be must increase according to the step value -->
+             </tr>
+
+             <!-- Student belong to which state. there is 29 state if we write all of them in a form then the representation of your form will be a not good so that we used drop down -->
+
+             <!-- DROP DOWN -->
+             <tr>
+                <!-- select & option tag -->
+                <td><label for="state">Select state</label></td>
+                <td>
+                    <!-- select : used to create a drop down list
+                         most often used in form , to collect user input -->
+                    <select name="state">
+                    <!-- option tag : defines an option in a select list
+                         option tag is goes inside the <select> list  -->
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="AR" disabled>Arunachal Pradesh</option>
+                    <option value="AS" disabled>Assam</option>
+                    <option value="BR">Bihar</option>
+                    <option value="CG">Chhattisgarh</option> 
+                    <option value="GA">Goa</option>
+                    <option value="GJ" disabled>Gujarat</option>
+                    <option value="HR">Haryana</option>
+                    <option value="HP">Himachal Pradesh</option>
+                    <option value="JH" disabled>Jharkhand</option>
+                    <option value="KA">Karnataka</option> 
+                    <option value="KL">Kerala</option>
+                    <option value="MP" disabled>Madhya Pradesh</option>
+                    <option value="MH" selected>Maharashtra</option>
+                    <option value="MN">Manipur</option>
+                    <option value="ML" disabled>Meghalaya</option>
+                    <option value="MZ">Mizoram</option>
+                    <option value="NL" hidden>Nagaland</option>
+                    <option value="OD">Odisha</option>
+                    <option value="PB">Punjab</option>
+                    <option value="RJ" hidden>Rajasthan</option> 
+                    <option value="Sk" disabled>Sikkim</option>
+                    <option value="TN">Tamil Nadu</option>
+                    <option value="TG">Telangana</option>
+                    <option value="TR" hidden>Tripura</option>
+                    <option value="UK">Uttarakhand</option>
+                    <option value="UP">Uttar Pradesh</option>
+                    <option value="WB" hidden disabled>West Bengal</option>
+                    </select>
+                    <!-- disabled : you can not selected the option, it shown but you can select 
+                         you can disable a complete input tab also -->
+                    <!-- selected : the option should be pre selected before the page load  -->
+                    <!-- hidden : the option is not seen to the user , it specifies that the element is not yet, is no longer , relevant -->
+                </td>  
+             </tr> 
+
+             <!-- FILE -->
+             <tr>
+                <td><label for="pic">Profile Picture</label></td>
+                <td><input type="file" accept="image/*" name="pic"></td>
+                <!-- type="file" : define a file select field and Browser button for file upload -->
+                <!-- MIME type : the images file can accept (accept : specifies the types of files that server accept)-->
+             </tr>
+
+             <!-- FEILDSET & LEGEND -->
+             <tr>
+                <!-- fieldset consist legend (name of the feildset means we are taking about the label) i.e. legend consist label tag asa well as fieldset consists input tag (means a option which are selected by user) -->
+                <td colspan="2">
+                     <fieldset>
+                        <legend>
+                            <label for="category">Select Category</label>
+                        </legend>
+                        <input type="radio" name="category" value="SC/ST">
+                        Schedule cast/ Tribe <br>
+                        <input type="radio" name="category" value="OBC">
+                        Other Backward Caste <br>
+                        <input type="radio" name="category" value="O">
+                        Open <br>
+                        <input type="radio" name="category" Value="other" checked>
+                        Other  
+                     </fieldset>
+                </td> 
+                <!-- fieldset : groups realted form element together 
+                     It is used to create a border box (draw a box around a grouped element) -->
+                <!-- legend : It create title for a feildset
+                     provied a title for grouped related form element -->
+             </tr>
+
+             <!-- SUBMIT & RESET -->
+             <tr>
+                <td><input type="submit" value="submit"></td>
+                <td><input type="reset" value="reset"></td>
+             </tr>
+
+             <!-- 
+             Form Validation:
+             1) required
+             2) max/min/step
+             3) maxlengh/ minlength
+             4) pattern
+             5) checked
+             6) selected/disable/hidden
+             -->
+             
+         </table>
+      </form>   
+    
+</body>
+</html>
